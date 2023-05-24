@@ -104,6 +104,12 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 .hidden {
     display: none;
 }
+img {
+    max-width: 100%;
+    max-height: 75vh;
+    margin: auto;
+    display: block;
+}
 /* twine-user-stylesheet #2: "numberpool-macro-set.css" */
 /*! <<numberpool>> macro set for SugarCube v2 */
 div[id|="numberinput-body"] {
@@ -1767,7 +1773,9 @@ Config.saves.slots = 10;</script><tw-passagedata pid="1" name="abby" tags="" pos
                 @@color:gray;You have seen all content for your mom&#39;s path.@@
             &lt;&lt;/if&gt;&gt;
         &lt;&lt;/if&gt;&gt;//
-    &lt;&lt;else&gt;&gt;
+    &lt;&lt;elseif hasVisited(&quot;finished&quot;)&gt;&gt;
+        &lt;&lt;goto &quot;gallery&quot;&gt;&gt;
+    &lt;&lt;else  &gt;&gt;
         &lt;&lt;goto &quot;finished&quot;&gt;&gt;
     &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="night" tags="" position="350,975" size="100,100">&lt;&lt;if hasVisited(&quot;gallery&quot;)&gt;&gt;
         &lt;&lt;goto &quot;gallery&quot;&gt;&gt;
@@ -1802,7 +1810,7 @@ Config.saves.slots = 10;</script><tw-passagedata pid="1" name="abby" tags="" pos
 
             [[Wake up the next day|nextDay]].
         &lt;&lt;/if&gt;&gt;
-    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="finished" tags="" position="475,975" size="100,100">You have seen all currently present in the game! You can now check out [[the gallery]] to revisit your favorite scenes, if you want to. Alternatively, you can [[start over from the beginning|characterCreation]].</tw-passagedata><tw-passagedata pid="75" name="gallery" tags="nobr" position="600,975" size="100,100">&#39;&#39;&lt;&lt;link &quot;Cosplay Path&quot;&gt;&gt;
+    &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="finished" tags="" position="475,975" size="100,100">You have seen all currently present in the game! You can now check out [[the gallery|gallery]] to revisit your favorite scenes, if you want to. Alternatively, you can &lt;&lt;link &quot;start over from the beginning&quot;&gt;&gt; &lt;&lt;run Engine.restart()&gt;&gt; &lt;&lt;/link&gt;&gt;.</tw-passagedata><tw-passagedata pid="75" name="gallery" tags="nobr" position="600,975" size="100,100">&#39;&#39;&lt;&lt;link &quot;Cosplay Path&quot;&gt;&gt;
         &lt;&lt;toggleclass &quot;#cosplay&quot; &quot;hidden&quot;&gt;&gt;
     &lt;&lt;/link&gt;&gt;&#39;&#39; &lt;br&gt;
     &lt;span id=&quot;cosplay&quot; class=&quot;hidden&quot;&gt;//
